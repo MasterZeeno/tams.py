@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # check_install() {
   # local cmd pkg="$1"
@@ -11,9 +11,9 @@
 # OUTDIR="${OUTDIR:-/sdcard/Projects}"
 # ss="screenshot.png"
 
-apt update #>/dev/null 2>&1
-apt upgrade -y
-apt install python3 python3-pip python3-selenium chromium-driver -y
+#apt update #>/dev/null 2>&1
+#apt upgrade -y
+#apt install python3 python3-pip python3-selenium chromium-driver -y
   
 # for pkg in python3 python3-pip python3-selenium chromium-driver; do
     # check_install "$pkg"
