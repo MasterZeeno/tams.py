@@ -84,7 +84,7 @@ def navigate(driver, url):
     try:
         driver.get(url)
     except Exception as e:
-        abort(driver, f"Error navigating to {full_url}: {e}")
+        abort(driver, f"Error navigating to {url}: {e}")
         
 def login(driver, args):
     navigate(driver, args.homepage)
