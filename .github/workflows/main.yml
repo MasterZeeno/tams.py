@@ -5,7 +5,7 @@ on:
 
 jobs:
   test:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -14,5 +14,5 @@ jobs:
         shell: bash
         run: |
           chmod +x start.sh
-          . start.sh
+          ./start.sh
       - uses: stefanzweifel/git-auto-commit-action@v5
