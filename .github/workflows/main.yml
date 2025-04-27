@@ -1,0 +1,17 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: debian-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Zee Test and Runner Script
+        shell: bash
+        run: |
+          chmod +x start.sh
+          . start.sh
