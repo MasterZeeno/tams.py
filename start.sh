@@ -8,14 +8,12 @@
   # fi
 # }
 
-OUTDIR="${OUTDIR:-/sdcard/Projects}"
-ss="screenshot.png"
+# OUTDIR="${OUTDIR:-/sdcard/Projects}"
+# ss="screenshot.png"
 
 apt update #>/dev/null 2>&1
 apt upgrade -y
-apt install -y \
-  python3 python3-pip \
-  python3-selenium chromium-driver
+apt install python3 python3-pip python3-selenium chromium-driver -y
   
 # for pkg in python3 python3-pip python3-selenium chromium-driver; do
     # check_install "$pkg"
@@ -28,7 +26,7 @@ while IFS=" " read -r url user pass; do
   python3 main.py "$url" "$user" "$pass"
 done < USERS
 
-if [[ -f "$ss" ]]; then
-  cp -f "$ss" "$OUTDIR/$ss" && \
-    echo -e "\n- Screenshot saved to: [$OUTDIR/$ss]\n"
-fi
+# if [[ -f "$ss" ]]; then
+  # cp -f "$ss" "$OUTDIR/$ss" && \
+    # echo -e "\n- Screenshot saved to: [$OUTDIR/$ss]\n"
+# fi
