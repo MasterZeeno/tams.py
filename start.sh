@@ -1,24 +1,25 @@
 #!/usr/bin/env bash
 
-check_install() {
-  local cmd pkg="$1"
-  [[ "$pkg" == *"-"* ]] && cmd="${pkg#*-}" || cmd="$pkg"
-  if ! command -v "$cmd" >/dev/null 2>&1; then
-      apt install -y "$pkg" >/dev/null 2>&1
-  fi
-}
+# check_install() {
+  # local cmd pkg="$1"
+  # [[ "$pkg" == *"-"* ]] && cmd="${pkg#*-}" || cmd="$pkg"
+  # if ! command -v "$cmd" >/dev/null 2>&1; then
+      # apt install -y "$pkg" >/dev/null 2>&1
+  # fi
+# }
 
 OUTDIR="${OUTDIR:-/sdcard/Projects}"
 ss="screenshot.png"
 
-apt update >/dev/null 2>&1
-# apt install -y \
-  # python3 python3-pip \
-  # python3-selenium chromium-driver
+apt update #>/dev/null 2>&1
+apt upgrade -y
+apt install -y \
+  python3 python3-pip \
+  python3-selenium chromium-driver
   
-for pkg in python3 python3-pip python3-selenium chromium-driver; do
-    check_install "$pkg"
-done
+# for pkg in python3 python3-pip python3-selenium chromium-driver; do
+    # check_install "$pkg"
+# done
 
 echo -e "\n- Starting to scrape...\n"
 while IFS=" " read -r url user pass; do
