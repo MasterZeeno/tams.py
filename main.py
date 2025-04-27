@@ -25,7 +25,8 @@ def setup_driver():
     chrome_options.add_argument('start-maximized')  # open Browser in maximized mode
     chrome_options.add_argument('disable-infobars')
     chrome_options.add_argument('--disable-extensions')
-    
+    chrome_options.binary_location = "/usr/bin/chromium-browser"
+
     return webdriver.Chrome(options=chrome_options)
 
 def print_msg(colorcode, icon, msg):

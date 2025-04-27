@@ -23,5 +23,5 @@ done
 c="copy.sh"
 check_and_do "_$c" mv -f "_$c" "$c" && echo "- Updated: [$c]"
 
-s="start.sh"
-check_and_do "$s" echo -e "\n- Running [$s]...\n"; sleep 2; . "$s"
+# s="start.sh"
+# check_and_do "$s" echo -e "\n- Running [$s]...\n"; sleep 2; . "$s"
