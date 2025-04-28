@@ -9,7 +9,7 @@ check_and_do() {
 
 clear
 OUTDIR="${1:-/sdcard/Projects}"
-mkOUTDIR -p "$OUTDIR"
+mkdir -p "$OUTDIR"
 
 for f in $(find "$OUTDIR" -mindepth 1 -maxdepth 1); do
   f2="$(basename "$f")"
